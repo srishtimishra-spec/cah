@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clean Air Horizons 2026 — Command Centre</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="toast" class="toast" hidden></div>
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="brand">CEEW · The Council</div>
+      <h1 class="event-title">Clean Air Horizons <span>2026</span></h1>
+      <div class="event-sub" id="eventSub">Achieving India’s Clean Air Ambition</div>
+    </div>
+
+    <div class="topbar-mid">
+      <div class="countdown">
+        <div class="count-num" id="daysLeft">–</div>
+        <div class="count-label">days to event</div>
+      </div>
+      <div class="event-meta" id="eventMeta"></div>
+    </div>
+
+    <div class="topbar-right">
+      <div class="sync" id="syncInfo">Loading…</div>
+      <div class="controls">
+        <button id="refreshBtn" class="btn btn-ghost" title="Pull the latest saved version">↻ Refresh</button>
+        <button id="editToggle" class="btn btn-edit">Switch to editing</button>
+        <button id="saveBtn" class="btn btn-save" hidden>Save changes</button>
+      </div>
+      <div class="editor-line" id="editorLine" hidden></div>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button data-tab="dashboard" class="tab active"><b>01</b> Dashboard</button>
+    <button data-tab="before" class="tab"><b>02</b> Before event</button>
+    <button data-tab="oneweek" class="tab"><b>03</b> One week before</button>
+    <button data-tab="sessions" class="tab"><b>04</b> Sessions &amp; people</button>
+    <button data-tab="docs" class="tab"><b>05</b> Documents &amp; coordination</button>
+    <button data-tab="eventday" class="tab"><b>06</b> Event day</button>
+  </nav>
+
+  <main id="view" class="view"></main>
+
+  <!-- Edit-mode passcode dialog -->
+  <div id="gate" class="gate" hidden>
+    <div class="gate-card">
+      <h3>Switch to editing</h3>
+      <p class="muted">Only people with the editor passcode can save changes. Everyone else can view.</p>
+      <label>Your name
+        <select id="gateName"></select>
+      </label>
+      <label>Editor passcode
+        <input id="gateKey" type="password" placeholder="Ask the event coordinator" autocomplete="off" />
+      </label>
+      <div id="gateError" class="gate-error" hidden></div>
+      <div class="gate-actions">
+        <button id="gateCancel" class="btn btn-ghost">Cancel</button>
+        <button id="gateConfirm" class="btn btn-edit">Start editing</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span>Working draft for the CEEW event team — verify against source documents before use.</span>
+    <span id="footVersion"></span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

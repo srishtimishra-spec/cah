@@ -1,0 +1,12 @@
+{
+  "name": "cah-command-centre",
+  "version": "1.0.0",
+  "description": "Clean Air Horizons 2026 — live event command centre (frontend + backend, zero dependencies).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node build-seed.js",
+    "reset": "node -e \"const f='data/data.json';require('fs').existsSync(f)&&require('fs').unlinkSync(f);console.log('data.json removed — will reseed on next start')\""
+  },
+  "engines": { "node": ">=18" }
+}
